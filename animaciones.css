@@ -1,100 +1,92 @@
-html{
-    scroll-behavior: smooth;
-    scroll-padding: 250px;
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 250px;
 }
 
-@keyframes fade{
-    from{
-        opacity: 0;
-        border-radius: 90px;
-    }
+@keyframes fade {
+  from {
+    opacity: 0;
+    border-radius: 90px;
+  }
 
-    to{
-        opacity: 1;
-    }
-
-    border-radius:100px;
-
+  to {
+    opacity: 1;
+    border-radius: 100px;
+  }
 }
 
-.title{
-    animation: fade 1s;
+.title {
+  animation: fade 1s;
 }
 
-.navbar_links a{
-    transition: all 0.5s;
+.navbar_links a {
+  transition: all 0.5s;
 }
 
-.navbar_links a:hover{
-    color: #1B9AAA;
-    background-color: #F8FFE5;
-    border-radius: 15px;
-    display: flex;
-    transform: scale(1.1);
+.navbar_links a:hover {
+  color: #1b9aaa;
+  background-color: #f8ffe5;
+  border-radius: 15px;
+  display: flex;
+  transform: scale(1.1);
 }
 
 .card_p button:hover {
-    background-color: #137a7a;
+  background-color: #137a7a;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100px);
   }
 
-@keyframes slide-up{
-
-    from{
-        transform: translateY(100px);
-    }
-
-    to{
-        transform: translateY(0px);
-    }
+  to {
+    transform: translateY(0px);
+  }
 }
 
-.hero_text p{
-    animation: slide-up 1s, fade 1.5s;
+.hero_text p {
+  animation: slide-up 1s, fade 1.5s;
 }
 
-@keyframes slide-down{
+@keyframes slide-down {
+  from {
+    transform: translateY(-200px);
+  }
 
-    from{
-        transform: translateY(-200px);
-    }
-
-    to{
-        transform: translateY(0px);
-    }
+  to {
+    transform: translateY(0px);
+  }
 }
 
-.about-us_text{
-    animation: slide-down 3s, fade 5s;
+.about-us_text {
+  animation: slide-down 3s, fade 5s;
 }
 
+@keyframes slide-right {
+  from {
+    transform: translateX(-100px);
+  }
 
-
-@keyframes slide-right{
-    from{
-        transform:translateX(-100px);
-    }
-
-    to{
-        transform::translateX(0px);
-    }
+  to {
+    transform: translateX(0px);
+  }
 }
 
-@keyframes slide-left{
+@keyframes slide-left {
+  from {
+    transform: translateX(100px);
+  }
 
-    from{
-        transform:translateX(100px);
-    }
-
-    to{
-        transform::translateX(0px);
-    }
+  to {
+    transform: translateX(0px);
+  }
 }
 
-.hero_text h2{
-    animation: slide-right 1s, fade 1s, rotate 1s;
+.hero_text h2 {
+  animation: slide-right 1s, fade 1s, rotate 1s;
 }
 
-.img-hero{
-    animation: slide-left 1s, fade 1s;
+.img-hero {
+  animation: slide-left 1s, fade 1s;
 }
-
