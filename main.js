@@ -237,7 +237,7 @@ const checkout = () => {
 
   Swal.fire({
     icon: "success",
-    title: "¡Gracias por su compra",
+    title: "¡Gracias por su compra!",
     text: "Su compra fue realiza con exito",
     confirmButtonColor: "#1b9aaa", // color de tu paleta
   });
