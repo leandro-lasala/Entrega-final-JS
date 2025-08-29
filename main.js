@@ -235,7 +235,12 @@ const checkout = () => {
     return;
   }
 
-  alert("¡Gracias por tu compra!");
+  Swal.fire({
+    icon: "success",
+    title: "¡Gracias por su compra",
+    text: "Su compra fue realiza con exito",
+    confirmButtonColor: "#1b9aaa", // color de tu paleta
+  });
   cart.length = 0; // Vacía el carrito
   saveCart();
   renderCart();
@@ -296,16 +301,61 @@ filterButtons.forEach((btn) => {
   });
 });
 
-// Inicializar la página
+//*****************form validaciones
+const form = document.querySelector(".form");
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const messageInput = document.getElementById("message");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let errores = [];
+
+  // ******************** nombre
+  if (nameInput.value.trim() === "") {
+    errores.push("El nombre es obligatorio.");
+  }
+
+  // ******************** email
+  if (emailInput.value.trim() === "") {
+    errores.push("El email es obligatorio.");
+  } else if (!/\S+@\S+\.\S+/.test(emailInput.value)) {
+    errores.push("El email no es válido.");
+  }
+
+  //  *****************mensaje
+  if (messageInput.value.trim() === "") {
+    errores.push("El mensaje es obligatorio.");
+  }
+
+  //  errores
+  if (errores.length > 0) {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: errores.join("\n"),
+    });
+  } else {
+    Swal.fire({
+      icon: "success",
+      title: "¡Enviado!",
+      text: "Formulario enviado con éxito.",
+      confirmButtonColor: "#1b9aaa", // color de tu paleta
+    });
+    form.reset();
+  }
+});
+
+//******************* Inicializar la página
 const init = () => {
   renderProducts(products);
-  renderCart(); // Renderizar los productos
-  document.querySelector(".cart-icon").addEventListener("click", toggleCart); // Botón de carrito
-  productsContainer.addEventListener("click", addToCart); // Detectar clic en "Agregar al carrito"
-  cartItem.addEventListener("click", deleteProduct); // Detectar clic en "Eliminar del carrito"
+  renderCart();
+  document.querySelector(".cart-icon").addEventListener("click", toggleCart);
+  productsContainer.addEventListener("click", addToCart);
+  cartItem.addEventListener("click", deleteProduct);
   document.getElementById("checkout-btn").addEventListener("click", checkout);
-  calculateSubtotal(); // Calcular el subtotal
-  updateCartCount(); // Actualizar el contador del carrito
+  calculateSubtotal();
+  updateCartCount();
 };
 
 init();

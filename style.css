@@ -11,6 +11,8 @@
   text-decoration: none;
   font-family: Abril Fatface;
   vertical-align: middle;
+  border: none;
+  appearance: none;
   /* border: red solid 1px; */
 }
 
@@ -622,11 +624,76 @@ main {
   padding: 60px;
   max-width: 1400px;
   width: 90%;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   gap: 50px;
-  margin-top: 200px;
+  font-size: 25px;
   /* flex-wrap: wrap; */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 40%;
+  margin: 70px 0 70px 0;
+}
+
+.title-form {
+  background-color: #ffd166;
+  color: white;
+  padding: 20px;
+  font-size: 30px;
+  font-weight: 300;
+  border-radius: 40px 5px 40px 5px;
+}
+
+.form-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 100px;
+}
+
+.form-content_gap {
+  display: flex;
+  gap: 10px;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+.input {
+  border-radius: 10px;
+  border: 1px solid #8d99ae;
+  padding: 10px;
+  font-family: roboto;
+  resize: none;
+  width: 50%;
+}
+
+.input-textarea {
+  border-radius: 10px;
+  border: 1px solid #8d99ae;
+  padding: 10px;
+  font-family: roboto;
+  resize: none;
+  width: 50%;
+}
+
+.button-form {
+  background-color: #1b9aaa;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 8px 12px;
+  cursor: pointer;
 }
 
 .contact_content {
